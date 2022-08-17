@@ -1,8 +1,7 @@
-//////////// GLOBAL veriables ////////////
         var todoholder = [];
         var newToDoHolder = [];
         var newHolder = [];
-// BEGIN - Add each todo list item and set priority level
+// Add each todo list item and set priority level
 // Obtains user's input for the priority level and each task description and output current list to user
 function AddToDo() {
         var rows = "";
@@ -17,9 +16,8 @@ function AddToDo() {
         todoholder[todoholder.length] = [prioritylvl, " &#10170 ", todoitem, "<br />"].join(' ');
         document.getElementById("main_form").reset();
     }
-// END - AddToDo()
 
-// BEGIN - Sort and output prioritized list and accomodate new data by removing old list data.
+// Sort and output prioritized list and accomodate new data by removing old list data.
 function Prioritize() {
         todoholder.sort(function(a,b) {
         return a[0]-b[0]
@@ -29,9 +27,8 @@ document.getElementById('new_list').innerHTML = "<br />Your Prioritized List:" +
 document.getElementById("current_list").style.display = "none";
 document.getElementById("current_list_header").style.display = "none";
 }
-// END - Prioritize()
 
-// BEGIN - PDF download of to-do list and reset #new-list for new list
+// PDF download of to-do list and reset #new-list for new list
 
 //BOM prepended to each string and low-quality formatting ***Fix***
 //Overlapping strings on resubmition of PDF (download)  ***Fix***
@@ -49,4 +46,3 @@ $('#cmd').click(function () {
     doc.save('to-do.pdf');
 
 });
-// END - PDF function()
